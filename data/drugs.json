@@ -1,0 +1,50 @@
+[
+    {
+        "color": "#8dd3c7",
+        "id": "Alpelisib",
+        "len": 21,
+        "label": "Alpelisib"
+    },
+    {
+        "color": "#ffffb3",
+        "id": "Dasatinib",
+        "len": 21,
+        "label": "Dasatinib"
+    },
+    {
+        "color": "#bebada",
+        "id": "Etoposide",
+        "len": 21,
+        "label": "Etoposide"
+    },
+    {
+        "color": "#fb8072",
+        "id": "Neratinib",
+        "len": 21,
+        "label": "Neratinib"
+    },
+    {
+        "color": "#80b1d3",
+        "id": "Paclitaxel",
+        "len": 21,
+        "label": "Paclitaxel"
+    },
+    {
+        "color": "#fdb462",
+        "id": "Palbociclib",
+        "len": 21,
+        "label": "Palbociclib"
+    },
+    {
+        "color": "#b3de69",
+        "id": "Trametinib",
+        "len": 21,
+        "label": "Trametinib"
+    },
+    {
+        "color": "#fccde5",
+        "id": "Vorinostat",
+        "len": 21,
+        "label": "Vorinostat"
+    }
+]
