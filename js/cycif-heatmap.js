@@ -68,7 +68,6 @@ function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC, gene='ERK
         logScale: false,
         color: 'RdBu',
         tooltipContent: function (d) {
-          // return d.block_id+' | '+d.concentration+'µm, '+d.timepoint+'h<br>logFC: '+-d.value.toFixed(2)+'<br>(vs DMSO '+d.timepoint+'h)'//+'<br>Bonferroni P: '+d.bonferroni_pvalue.toExponential()
           return d.block_id+' | '+d.concentration+'µm, '+d.timepoint+'h<br>logFC: '+-d.value.toFixed(2)+'<br>(vs DMSO '+d.timepoint+'h)<br><img src="/images/differential_expression/'+gene+'-'+d.block_id+'-'+d.concentration+'-nuclear-'+d.timepoint+'h.png" style="margin: 5px 10px;">'//+'<br>Bonferroni P: '+d.bonferroni_pvalue.toExponential()
         }
 
@@ -80,7 +79,6 @@ function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC, gene='ERK
         color: 'RdBu',
         tooltipContent: function (d) {
           return d.block_id+' | '+d.concentration+'µm, '+d.timepoint+'h<br>logFC: '+-d.value.toFixed(2)+'<br>(vs DMSO '+d.timepoint+'h)<br><img src="/images/differential_expression/'+gene+'-'+d.block_id+'-'+d.concentration+'-cytosolic-'+d.timepoint+'h.png" style="margin: 5px 10px;">'//+'<br>Bonferroni P: '+d.bonferroni_pvalue.toExponential()
-          // return d.block_id+' | '+d.concentration+'µm, '+d.timepoint+'h<br>logFC: '+-d.value.toFixed(2)+'<br>(vs DMSO '+d.timepoint+'h)<br><embed type="application/pdf" src="/images/differential_expression/'+d.block_id+'-'+'ERK-1'+'-'+d.concentration+'-'+'nuclear'+d.timepoint+'h"></img>'//+'<br>Bonferroni P: '+d.bonferroni_pvalue.toExponential()
         }
       })
       .heatmap('drugConcentration', drugConcentration, {
@@ -97,7 +95,7 @@ function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC, gene='ERK
         outerRadius: 1.40,
         color: 'OrRd',
         tooltipContent: function (d) {
-          return d.value+'h timepoint'
+          return d.block_id+' | '+d.value+'h timepoint'
         }
       })
       .render()
