@@ -6,7 +6,8 @@ function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC) {
         width: width,
         height: width
     });
-
+  gene = $('#selected-gene').html();
+  console.log(gene);
   FCs = []
   $.each(cytosolicFC.concat(nuclearFC), function(i, elem) {
   	FCs.push(Math.abs(elem.logfc));
