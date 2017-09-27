@@ -1,5 +1,5 @@
 
-function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC, gene='ERK-1') {
+function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC) {
   var width = 800;//document.getElementsByClassName('mdl-card__supporting-text')[0].offsetWidth
   var circosHeatmap = new Circos({
         container: '#heatmapChart',
@@ -101,12 +101,11 @@ function drawCircos(error, drugs, annotations, cytosolicFC, nuclearFC, gene='ERK
       .render()
 }
 
-gene = 'ERK-1'
-
-d3.queue()
-  .defer(d3.json, './data/drugs.json')
-  .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_cytosolic.txt')
-  .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_cytosolic.txt')
-  .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_nuclear.txt')
-  // .defer(d3.csv, './data/days-off.csv')
-  .await(drawCircos)
+function drawHeatmap(gene) {
+  d3.queue()
+    .defer(d3.json, './data/drugs.json')
+    .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_cytosolic.txt')
+    .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_cytosolic.txt')
+    .defer(d3.csv, './data/differential_expression/'+gene+'-differential_expression_nuclear.txt')
+    .await(drawCircos)
+};
